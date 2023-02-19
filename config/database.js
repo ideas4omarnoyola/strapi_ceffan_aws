@@ -1,0 +1,15 @@
+module.exports = ({ env }) => ({
+  connection: {
+    client: 'postgres',
+    connection: {
+      host: env('DATABASE_HOST', 'ceffandb.cpjjvq74z1e6.us-east-1.rds.amazonaws.com'),
+      port: env.int('DATABASE_PORT'),
+      database: env('DATABASE_NAME'),
+      user: env('DATABASE_USERNAME'),
+      password: env('DATABASE_PASSWORD'),
+      ssl: {
+        rejectUnauthorized: env.bool('DATABASE_SSL_SELF'),
+      },
+    },
+  },
+});

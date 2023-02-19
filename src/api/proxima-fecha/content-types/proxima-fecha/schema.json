@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "proximas_fechas",
+  "info": {
+    "singularName": "proxima-fecha",
+    "pluralName": "proximas-fechas",
+    "displayName": "Proximas_fechas"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "fecha1": {
+      "type": "date"
+    },
+    "fecha2": {
+      "type": "date"
+    },
+    "duracion": {
+      "type": "integer"
+    },
+    "modalidad": {
+      "type": "enumeration",
+      "enum": [
+        "elearning",
+        "presencial",
+        "zoom"
+      ]
+    },
+    "curso": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::curso.curso"
+    },
+    "proximamente": {
+      "type": "string"
+    }
+  }
+}
